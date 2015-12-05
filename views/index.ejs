@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+    <script type="text/javascript">
+        takanaClient.run({
+            host: 'localhost:48626' // optional, defaults to localhost:48626
+        });
+    </script>
+</head>
+<body id="bootstrap-overrides">
+<div class="spacer s0">
+</div>
+<div id="parallax1" class="parallaxParent">
+    <div class="header">
+        <nav class="navbar affix-top" data-sr="enter left, ease-in 20px" data-spy="affix">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/projects">PROJECTS</a></li>
+            <li>RESUME</li>
+        </nav>
+        <div class="content">
+        <h1 data-sr='wait 0.8s roll 15deg'><%= title %></h1>
+        <div class="city">
+            <h3 class="sz" data-sr='wait 0.8s roll 15deg'>Suzhou |</h3>
+            <h3 class="cmbs" data-sr='wait 0.8s roll 15deg'>Columbus |</h3>
+            <h3 class="nyc" data-sr='wait 0.8s roll 15deg'>New York City</h3>
+            <p data-sr='wait 0.8s roll 15deg'>Full Stack Web Developer</p>
+        </div>
+        <div class="socialmedias" data-sr='wait 0.8s spin -30deg'>
+            <a href="https://github.com/mikuya707" target="_blank">
+                <i class="fa fa-github fa-3x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/karenjunyingmao" target="_blank">
+                <i class="fa fa-linkedin-square fa-3x"></i>
+            </a>
+            <a href="https://plus.google.com/u/0/+Karenmao/posts" target="_blank">
+                <i class="fa fa-google-plus fa-3x"></i>
+            </a>
+
+        </div>
+        </div>
+    </div>
+</div>
+<div class="spacer s1">
+    <div class="box2 blue">
+    </div>
+</div>
+<div class="spacer s0"></div>
+<div id="parallax2" class="parallaxParent">
+    <div style="background-image: url(../../img/example_parallax_bg2.png);"></div>
+</div>
+<div class="spacer s1">
+    <div class="box2 blue">
+        <p>Content 2</p>
+        <a href="#" class="viewsource">view source</a>
+    </div>
+</div>
+<div class="spacer s0"></div>
+<div id="parallax3" class="parallaxParent">
+    <div style="background-image: url(../../img/example_parallax_bg3.png);"></div>
+</div>
+<div class="spacer s2"></div>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script src="node_modules/scrollreveal/dist/scrollReveal.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $(".sz").hover(function() {
+            $("#parallax1").attr('style', 'background-image: url(/images/sz.png); background-size: cover;transition: all .5s linear;');
+            $("h1").attr('style','color: #C8224E');
+            $(".city").attr('style','color: black');
+            $(".socialmedias i").attr('style','color: white');
+        });
+        $(".cmbs").hover(function() {
+            $("#parallax1").attr('style', 'background-image: url(/images/cmbs.png); background-size: cover; transition: all .5s linear;');
+            $("h1").attr('style','color: turquoise');
+            $(".city").attr('style','color: white');
+            $(".socialmedias i").attr('style','color: #31F0E5');
+        });
+        $(".nyc").hover(function() {
+            $("#parallax1").attr('style', 'background-image: url(/images/nyc.png); background-size: cover;transition: all .5s linear');
+            $("h1").attr('style','color: #002782');
+            $(".city").attr('style', 'color: black');
+            $(".socialmedias i").attr('style','color: #E22267');
+        });
+
+        $('nav').affix({
+            offset: {
+                top: 90
+            }
+        });
+
+    });
+
+    window.sr = new scrollReveal();
+</script>
+</body>
+</html>
